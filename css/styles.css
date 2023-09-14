@@ -155,12 +155,7 @@ p {
   background-size: cover;
   background-repeat: no-repeat;
   padding: 188px 0;
-}
-
-.hero {
-  justify-content: center;
   text-align: center;
-  align-items: center;
 }
 
 .hero-title {
@@ -390,8 +385,6 @@ p {
 .section-card {
   padding-bottom: 120px;
 }
-
-.card-list {}
 
 .card-list img {
   width: 360px;
