@@ -15,7 +15,7 @@
   --cornflower: #e7e9fc;
   --lightslate: #8E8F99;
   --green: #31D0AA;
-  --transition-duration: var(--transition-duration);
+  --transition-duration: 250ms;
   --hover-timing: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
