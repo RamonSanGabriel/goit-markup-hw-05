@@ -561,7 +561,7 @@ p {
   height: 100%;
   top: 0px;
   left: 0px;
-  /* pointer-events: auto; */
+  pointer-events: auto;
   opacity: 1;
   /* transition: visibility, 1s; */
   transition-property: visibility, opacity;
@@ -571,7 +571,7 @@ p {
 .modal.is-hidden {
   visibility: hidden;
   opacity: 0;
-  /* pointer-events: auto; */
+  pointer-events: auto;
 }
 
 .modal-content {
