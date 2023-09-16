@@ -15,7 +15,7 @@
   --cornflower: #e7e9fc;
   --lightslate: #8E8F99;
   --green: #31D0AA;
-  --transition-duration: .250ms;
+  --transition-duration: var(--transition-duration);
   --hover-timing: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -75,6 +75,7 @@ p {
 
 /* Header: Navigation container section  */
 .container-header {
+  position: relative;
   display: flex;
   border-bottom: 1px solid var(--cornflower);
   padding: 24px 156px;
@@ -127,8 +128,21 @@ p {
   font-weight: 500;
 }
 
+.navigation-list a:hover:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 48px;
+  height: 4px;
+  background-color: var(--ocean);
+  border-radius: 2px;
+  transition-timing-function: ease-in-out;
+}
+
 .navigation-list a:hover {
   color: var(--ocean, #404bbf);
+  gap: 20px;
 }
 
 .address-section {
@@ -137,6 +151,7 @@ p {
 
 .address-section a {
   color: var(--slate, #434455);
+  display: inline-block;
   font-style: normal;
   line-height: 1.5rem;
   letter-spacing: 0.32px;
@@ -146,6 +161,18 @@ p {
 
 .address-section a:hover {
   color: var(--ocean, #404bbf);
+}
+
+.address-section a:hover:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  background-color: var(--ocean, #404bbf);
+  width: 48px;
+  height: 4px;
+  border-radius: 2px;
+  transition-timing-function: ease-in-out;
 }
 
 /* Hero container section  */
@@ -399,7 +426,7 @@ p {
 .card-list {
   cursor: pointer;
   background: var(--WHITE, #FFF);
-  transition: box-shadow var(--transition-duration) cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow var(--transition-duration) var(--hover-timing);
 }
 
 .card-list:hover {
@@ -425,7 +452,7 @@ p {
   text-align: left;
   align-items: center;
   display: flex;
-  transition: transform var(--transition-duration) cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--transition-duration) var(--hover-timing);
   transform: translateY(100%);
   will-change: transform;
 }
@@ -563,15 +590,16 @@ p {
   left: 0px;
   pointer-events: auto;
   opacity: 1;
-  /* transition: visibility, 1s; */
-  transition-property: visibility, opacity;
-  transition-duration: 1s;
+  transition-property: visibility, opacity, transform;
+  transition-duration: var(--transition-duration);
+  transform: none;
 }
 
 .modal.is-hidden {
   visibility: hidden;
   opacity: 0;
   pointer-events: auto;
+  transform: translateY(20px);
 }
 
 .modal-content {
