@@ -16,7 +16,7 @@
   --lightslate: #8E8F99;
   --green: #31D0AA;
   --transition-duration: 250ms;
-  --hover-timing: cubic-bezier(0.4, 0, 0.2, 1);
+  --cubic-bezier: (0.4, 0, 0.2, 1);
 }
 
 body {
@@ -116,7 +116,6 @@ p {
 
 .navigation-list {
   display: inline-block;
-  /* position: relative; */
 }
 
 .navigation-list:not(:last-child),
@@ -124,13 +123,24 @@ p {
   margin-right: 40px;
 }
 
+.navigation-list .active {
+  color: var(--ocean, #404bbf);
+}
+
+.navigation-list .active::after {
+  content: "";
+  width: 100%;
+  opacity: 1;
+}
+
 .navigation-list a {
   text-decoration: none;
   color: var(--navyblue, #2e2f42);
   font-weight: 500;
   position: relative;
-  transition-timing-function: ease-out, cubic-bezier(0.4, 0, 0.2, 1);
-  transition: 250ms;
+  transition-property: color background-color;
+  transition-duration: 2s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navigation-list a:hover,
@@ -147,9 +157,10 @@ p {
   position: absolute;
   left: 0;
   bottom: -28px;
-  opacity: 0;
-  transition: 250ms;
-  transition-timing-function: scaleX(0), cubic-bezier(0.4, 0, 0.2, 1);
+  /* opacity: 0; */
+  /* transition-duration: 5s; */
+  /* transition-property: color background-color; */
+  /* transition-timing-function: scaleX(0), cubic-bezier(0.4, 0, 0.2, 1); */
   pointer-events: none;
   border-radius: 2px;
 }
@@ -157,8 +168,9 @@ p {
 .navigation-list a:hover::after,
 .navigation-list a:focus::after {
   opacity: 1;
-  transition-timing-function: scaleX(1), cubic-bezier(0.4, 0, 0.2, 1);
   width: 100%;
+
+
 }
 
 .address-section {
@@ -177,8 +189,8 @@ p {
   text-decoration: none;
   margin-right: 40px;
   position: relative;
-  transition-timing-function: ease-out, cubic-bezier(0.4, 0, 0.2, 1);
-  transition: 250ms;
+  /* transition-timing-function: ease-out, cubic-bezier(0.4, 0, 0.2, 1); */
+  /* transition: 250ms; */
 }
 
 .address-section a:hover,
@@ -339,6 +351,12 @@ p {
     0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
 
+.team-list:hover {
+  background: var(--white, #fff);
+  box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
+    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+    0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+}
 
 .team-list h3 {
   margin-top: 32px;
@@ -360,11 +378,14 @@ p {
   align-items: center;
   gap: 24px;
   padding-bottom: 32px;
+
 }
 
 .social-media-list-icon {
   background-color: var(--iris);
   border-radius: 50%;
+  transition-timing-function: ease-out, cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
 }
 
 .social-media-list-icon:hover {
@@ -459,7 +480,7 @@ p {
 .card-list {
   cursor: pointer;
   background: var(--WHITE, #FFF);
-  transition: box-shadow var(--transition-duration) var(--hover-timing);
+  /* transition: box-shadow var(--transition-duration) var(--hover-timing); */
 }
 
 .card-list:hover {
@@ -485,7 +506,7 @@ p {
   text-align: left;
   align-items: center;
   display: flex;
-  transition: transform var(--transition-duration) var(--hover-timing);
+  /* transition: transform var(--transition-duration) var(--hover-timing); */
   transform: translateY(100%);
   will-change: transform;
 }
