@@ -451,13 +451,10 @@ p {
   cursor: pointer;
   margin-left: 24px;
   border-style: none;
-}
-
-.filter-list a {
   color: var(--iris, #4d5ae5);
-  transition: ease-out, 2s;
-  transition-property: background-color;
-  background-color: #f4f4fd;
+  /* transition: ease-out, 2s; */
+  transition-property: background, color, box-shadow, border;
+  background: #f4f4fd;
   padding: 12px 24px;
   border: 1px solid var(--cornflower, #e7e9fc);
   border-radius: 4px;
@@ -468,15 +465,18 @@ p {
   line-height: 1.5rem;
   letter-spacing: 0.64px;
   text-decoration: none;
+  transition-property: color, background, box-shadow, border;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.filter-list a::after {
+.filter-list button::after {
   content: " ";
   /* display: block; */
-  transition: transform;
+  /* transition: transform; */
 }
 
-.filter-list a:hover {
+.filter-list button:hover {
   color: var(--white, #fff);
   border-radius: 4px;
   background: var(--ocean, #404bbf);
@@ -499,7 +499,7 @@ p {
 .card-list {
   cursor: pointer;
   background: var(--WHITE, #FFF);
-  transition: box-shadow var(--transition-duration) var(--hover-timing);
+  transition: box-shadow 250ms, border cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card-list:hover {
@@ -525,7 +525,8 @@ p {
   text-align: left;
   align-items: center;
   display: flex;
-  /* transition: transform var(--transition-duration) var(--hover-timing); */
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transform: translateY(100%);
   will-change: transform;
 }
@@ -664,16 +665,17 @@ p {
   left: 0px;
   pointer-events: auto;
   opacity: 1;
-  transition-property: visibility, opacity, transform;
+  transition-property: visibility, opacity, transform, width;
   transition-duration: 250ms;
-  transform: none;
+  transform: rotate(360deg);
+
 }
 
 .modal.is-hidden {
   visibility: hidden;
   opacity: 0;
   pointer-events: auto;
-  transform: translateY(20px);
+  transform: translateY(30px);
 }
 
 .modal-content {
@@ -686,15 +688,18 @@ p {
 }
 
 .modal-close {
-  display: flex;
-  /* align-items: center; */
   justify-content: center;
-  /* background-color: var(--CORNFLOWER); */
+  stroke: rgba(46, 47, 66, 1);
   border: 0px;
   border-radius: 12px;
   width: 24px;
   height: 24px;
   position: absolute;
-  left: 100%;
-  top: 0px;
+  right: 24px;
+  top: 24px;
+  transition-duration: 250ms;
+}
+
+.modal-close:hover {
+  opacity: 0.5;
 }
