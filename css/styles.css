@@ -671,8 +671,6 @@ p {
   opacity: 1;
   transition-property: visibility, opacity;
   transition-duration: 250ms;
-
-
 }
 
 .modal.is-hidden {
@@ -682,7 +680,8 @@ p {
 }
 
 .modal.is-hidden .modal-content {
-  transform: translateY(-20px);
+  /* transform: translateY(-20px); */
+  transform: scale(0.8);
 }
 
 .modal-content {
