@@ -638,7 +638,7 @@ p {
 .footer-media-list-icon {
   border-radius: 50%;
   background-color: var(--iris);
-  transition: ease-out 250ms;
+  transition: background-color 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -689,9 +689,10 @@ p {
   border-radius: 4px;
 }
 
-.modal-close {
+.modal-close svg {
   justify-content: center;
   stroke: rgba(46, 47, 66, 1);
+  stroke-width: 1px;
   border: 0px;
   border-radius: 12px;
   width: 24px;
@@ -700,6 +701,7 @@ p {
   right: 24px;
   top: 24px;
   transition-duration: 250ms;
+  background: rgb(231, 233, 252);
 }
 
 .modal-close:hover {
