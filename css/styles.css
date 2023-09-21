@@ -262,6 +262,7 @@ p {
   padding: 16px 32px;
   text-transform: capitalize;
   left: 636px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-button:hover {
@@ -452,8 +453,6 @@ p {
   margin-left: 24px;
   border-style: none;
   color: var(--iris, #4d5ae5);
-  /* transition: ease-out, 2s; */
-  transition-property: background, color, box-shadow, border;
   background: #f4f4fd;
   padding: 12px 24px;
   border: 1px solid var(--cornflower, #e7e9fc);
@@ -465,7 +464,7 @@ p {
   line-height: 1.5rem;
   letter-spacing: 0.64px;
   text-decoration: none;
-  transition-property: color, background, box-shadow, border;
+  transition-property: color, background-color, box-shadow, border;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -487,7 +486,10 @@ p {
 .filter-list a:hover::after {
   transform: scaleX(2);
 }
-
+.filter-list .active {
+  background: var(--ocean, #404bbf);
+  color: var(--white, #fff);
+}
 .section-card {
   padding-bottom: 120px;
 }
