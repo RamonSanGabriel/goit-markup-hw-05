@@ -667,17 +667,17 @@ p {
   left: 0px;
   pointer-events: auto;
   opacity: 1;
-  transition-property: visibility, opacity, transform, width;
+  transition-property: visibility, opacity, transform;
   transition-duration: 250ms;
-  transform: rotate(360deg);
+  transform: none;
 
 }
 
 .modal.is-hidden {
   visibility: hidden;
   opacity: 0;
-  pointer-events: auto;
-  transform: translateY(30px);
+  pointer-events: none;
+  transform: translateY(-20px);
 }
 
 .modal-content {
