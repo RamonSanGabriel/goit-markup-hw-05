@@ -486,10 +486,12 @@ p {
 .filter-list a:hover::after {
   transform: scaleX(2);
 }
+
 .filter-list .active {
   background: var(--ocean, #404bbf);
   color: var(--white, #fff);
 }
+
 .section-card {
   padding-bottom: 120px;
 }
@@ -667,9 +669,9 @@ p {
   left: 0px;
   pointer-events: auto;
   opacity: 1;
-  transition-property: visibility, opacity, transform;
+  transition-property: visibility, opacity;
   transition-duration: 250ms;
-  transform: none;
+
 
 }
 
@@ -677,6 +679,9 @@ p {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
+}
+
+.modal.is-hidden .modal-content {
   transform: translateY(-20px);
 }
 
@@ -687,6 +692,8 @@ p {
   background-color: white;
   box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.20), 0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
   border-radius: 4px;
+  transform: none;
+  transition: transform 250ms;
 }
 
 .modal-close {
@@ -703,10 +710,12 @@ p {
   transition-duration: 250ms;
   background: rgb(231, 233, 252);
 }
+
 .modal-close svg {
   width: 24px;
   height: 24px;
 }
+
 .modal-close:hover {
   opacity: 0.5;
   cursor: pointer;
