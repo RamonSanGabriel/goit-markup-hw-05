@@ -689,7 +689,7 @@ p {
   border-radius: 4px;
 }
 
-.modal-close svg {
+.modal-close {
   justify-content: center;
   stroke: rgba(46, 47, 66, 1);
   stroke-width: 1px;
@@ -703,7 +703,10 @@ p {
   transition-duration: 250ms;
   background: rgb(231, 233, 252);
 }
-
+.modal-close svg {
+  width: 24px;
+  height: 24px;
+}
 .modal-close:hover {
   opacity: 0.5;
   cursor: pointer;
